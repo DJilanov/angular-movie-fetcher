@@ -19,8 +19,8 @@ export class AppComponent {
     private moviesService: MoviesService,
     private backendService: BackendService
   ) {
-    this.backendService.getMovies().subscribe(
-      data => this.moviesService.setMovies(data.json()),
+    this.backendService.getMovieSuggestions().subscribe(
+      data => this.moviesService.setMovies(data.Search),
       // TODO: Add error handler service
       err => alert(err)
     );
