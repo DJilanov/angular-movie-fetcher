@@ -10,6 +10,12 @@ import { MovieModel } from '../../models/movie.model';
 export class MoviesService {
 
   private movies = [];
+  public moviesSubscriber: EventEmitter<any>;
+
+	constructor() {
+    this.moviesSubscriber = new EventEmitter();
+  }
+
   /**
   * @getMovies get all Movies
   * @return {Array} all Movies
@@ -18,15 +24,23 @@ export class MoviesService {
     return this.movies;
   }
 
+  /**
+  * @setMovies set all Movies
+  * @return {Array} all Movies
+  */
   public setMovies(movies: MovieModel[]) {
-    this.movies = movies;
+    if(Array.isArray(movies)) {
+      this.movies = movies;
+    } else {
+      this.movies = [movies];
+    }
     this.emitMovies();
   }
 
   /**
-  * @emitCategories emit the categories to the components
+  * @emitMovies emit the movies to the components
   */
   public emitMovies() {
-    // TODO: emit that there is change
+		this.moviesSubscriber.emit(this.movies);
   }
 }

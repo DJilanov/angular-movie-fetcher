@@ -16,11 +16,13 @@ export class AppComponent {
 
   constructor(
     private router: Router,
+    private moviesService: MoviesService,
     private backendService: BackendService
   ) {
     this.backendService.getMovies().subscribe(
-      // data => this.productsService.setProducts(data.json()),
-      // err => this.errorHandlerService.handleRequestError(err)
+      data => this.moviesService.setMovies(data.json()),
+      // TODO: Add error handler service
+      err => alert(err)
     );
   };
 }

@@ -1,11 +1,1 @@
-<app-carousel [products]="carouselProducts" [enableRouting]="true"></app-carousel>
-<div class="container-fluid p-5">
-  <div *ngFor="let category of productsByCategories;" class="row-fluid">
-    <h3 *ngIf="category.products.length">{{category.title[language]}}</h3>
-    <div class="row">
-      <div *ngFor="let product of category.products;" class="col-12 col-lg-3 col-md-4 col-sm-6 p-3">
-        <app-product [product]="product"></app-product>
-      </div>
-    </div>
-  </div>
-</div>
+Search

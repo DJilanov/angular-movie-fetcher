@@ -7,5 +7,5 @@ export const environment = {
 	production: false,
 	envName: 'dev-test',
 	appUrl: 'http://localhost:4200/',
-	apiUrl: 'http://localhost:8080/api/'
+	apiUrl: 'http://www.omdbapi.com/?s=Guardians&apikey=c11d35e6'
 };

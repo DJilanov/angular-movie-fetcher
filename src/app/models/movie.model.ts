@@ -1,54 +1,83 @@
+import { RatingModel } from './rating.model';
+
 export class MovieModel {
-	id: string;
-	category: string;
-	isShownMainPage: boolean;
-	newPrice: number;
-	oldPrice: number;
-	isDailyOffer: boolean;
-	zIndex: number;
-	isShown: boolean;
-	count: number;
-	rating: number;
-	isNew: boolean;
-	isOnCarousel: boolean;
-	link: string;
-	make: string;
-	mainImage: string;
-	otherImages: Array<string>
+	Title: string;
+	Year: string;
+	Rated: string;
+	Released: string;
+	Runtime: string;
+	Genre: string;
+	Director: string;
+	Writer: string;
+	Actors: string;
+	Plot: string;
+	Language: string;
+	Country: string;
+	Awards: string;
+	Poster: string;
+	Metascore: string;
+	imdbRating: string;
+	imdbVotes: string;
+	imdbID: string;
+	Type: string;
+	DVD: string;
+	BoxOffice: string;
+	Production: string;
+	Website: string;
+  Response: string;
+  Ratings: RatingModel[]
 
 	constructor(
-		id?: string,
-		category?: string,
-		isShownMainPage?: boolean,
-		newPrice?: number,
-		oldPrice?: number,
-		isDailyOffer?: boolean,
-		zIndex?: number,
-		isShown?: boolean,
-		count?: number,
-		rating?: number,
-		isNew?: boolean,
-		isOnCarousel?: boolean,
-		link?: string,
-		make?: string,
-		mainImage?: string,
-		otherImages?: Array<string>
+    Title?: string,
+    Year?: string,
+    Rated?: string,
+    Released?: string,
+    Runtime?: string,
+    Genre?: string,
+    Director?: string,
+    Writer?: string,
+    Actors?: string,
+    Plot?: string,
+    Language?: string,
+    Country?: string,
+    Awards?: string,
+    Poster?: string,
+    Metascore?: string,
+    imdbRating?: string,
+    imdbVotes?: string,
+    imdbID?: string,
+    Type?: string,
+    DVD?: string,
+    BoxOffice?: string,
+    Production?: string,
+    Website?: string,
+    Response?: string,
+    Ratings?: RatingModel[]
 	) {
-		this.id = id;
-		this.category = category;
-		this.isShownMainPage = isShownMainPage;
-		this.newPrice = newPrice;
-		this.oldPrice = oldPrice;
-		this.isDailyOffer = isDailyOffer;
-		this.zIndex = zIndex;
-		this.isShown = isShown;
-		this.count = count;
-		this.rating = rating;
-		this.isNew = isNew;
-		this.isOnCarousel = isOnCarousel;
-		this.link = link;
-		this.make = make;
-		this.mainImage = mainImage;
-		this.otherImages = otherImages;
+		this.Title = Title;
+		this.Year = Year;
+		this.Rated = Rated;
+		this.Released = Released;
+		this.Runtime = Runtime;
+		this.Genre = Genre;
+		this.Director = Director;
+		this.Writer = Writer;
+		this.Actors = Actors;
+		this.Plot = Plot;
+		this.Language = Language;
+		this.Country = Country;
+		this.Awards = Awards;
+		this.Poster = Poster;
+		this.Metascore = Metascore;
+		this.imdbRating = imdbRating;
+		this.imdbVotes = imdbVotes;
+		this.imdbID = imdbID;
+		this.Type = Type;
+		this.DVD = DVD;
+		this.BoxOffice = BoxOffice;
+		this.Production = Production;
+		this.Website = Website;
+		this.Response = Response;
+		this.Ratings = Ratings;
 	}
 }

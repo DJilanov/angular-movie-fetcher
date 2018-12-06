@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { MovieModel } from '../../models/movie.model';
+import { MoviesService } from '../../services/movies/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +14,13 @@ export class HomeComponent {
   public movies: MovieModel[];
 
   constructor(
-    private router: Router
+    private moviesService: MoviesService,
   ) {
+    this.movies = this.moviesService.getMovies();
+    this.moviesService.moviesSubscriber.subscribe((movies) => this.setMovies(movies));
+  }
 
+  private setMovies(movies) {
+    this.movies = movies;
   }
 }

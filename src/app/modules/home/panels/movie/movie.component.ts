@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MovieModel } from '../../../../models/movie.model';
@@ -11,7 +11,7 @@ import { MovieModel } from '../../../../models/movie.model';
 
 export class MovieComponent {
 
-  public movie: MovieModel;
+  @Input() public movie: MovieModel;
 
   constructor(
     private router: Router
