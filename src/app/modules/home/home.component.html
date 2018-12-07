@@ -1,5 +1,15 @@
 <div class="container-fluid p-5">
-  <div *ngFor="let movie of movies;" class="row-fluid">
-    <app-movie [movie]="movie"></app-movie>
+  <ng-select
+    placeholder="Search for movies"
+    (change)="onSelect()"
+    [notFoundText]="notFoundText"
+    [typeahead]="typeahead"
+    [(ngModel)]="selectedMovie">
+    <ng-option *ngFor="let movie of movies; let i = index"
+      [value]="i">{{movie.Title}} ({{movie.Year}})</ng-option>
+    <ng-option *ngIf="!movies.length" value="-1" disabled>{{notFoundText}}</ng-option>
+  </ng-select>
+  <div *ngIf="selectedMovie !== undefined">
+    <app-movie-details [movie]="movies[selectedMovie]"></app-movie-details>
   </div>
 </div>

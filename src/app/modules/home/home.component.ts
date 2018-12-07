@@ -1,7 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
+import { debounceTime, switchMap } from 'rxjs/operators';
+
+import { BackendService } from '../../core/backend/backend.service';
 
 import { MovieModel } from '../../models/movie.model';
-import { MoviesService } from '../../services/movies/movies.service';
+
+enum SearchStatus {
+  empty = 'Type to search',
+  fetching = 'Fetching data...',
+}
 
 @Component({
   selector: 'app-home',
@@ -11,16 +18,46 @@ import { MoviesService } from '../../services/movies/movies.service';
 
 export class HomeComponent {
 
-  public movies: MovieModel[];
+  public typeahead = new EventEmitter<string>();
+  public selectedMovie: number;
+  public notFoundText: string = SearchStatus.empty;
+  public movies: MovieModel[] = [];
 
   constructor(
-    private moviesService: MoviesService,
+    private backendService: BackendService
   ) {
-    this.movies = this.moviesService.getMovies();
-    this.moviesService.moviesSubscriber.subscribe((movies) => this.setMovies(movies));
+    this.typeahead
+      .pipe(
+          debounceTime(200),
+          switchMap(term => {
+            this.notFoundText = SearchStatus.fetching;
+            return this.backendService.getMovieSuggestions(term)
+          })
+      )
+      .subscribe((response) => {
+        if(response.Error) {
+          this.movies.length = 0;
+          this.notFoundText = response.Error
+        } else {
+          this.movies = response.Search;
+        }
+      }, (err) => {
+          console.log('error', err);
+          this.movies = [];
+          alert(`Fetching error: ${err}`);
+      });
   }
 
-  private setMovies(movies) {
-    this.movies = movies;
+  public onSelect() {
+    this.backendService.getSpecificMovie(this.movies[this.selectedMovie].imdbID)
+      .subscribe((response: any) => {
+        if(!response.Error) {
+          this.movies[this.selectedMovie] = response;
+        }
+      }, (err) => {
+          console.log('error', err);
+          this.movies = [];
+          alert(`Fetching error: ${err}`);
+      });
   }
 }

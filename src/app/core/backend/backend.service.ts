@@ -14,15 +14,18 @@ export class BackendService {
   */
   public getMovieSuggestions(text = 'Guardians') {
     return this.http.get(environment.apiUrl + `&s=${text}`)
-    .pipe(
-      map(res => JSON.parse(res.text()))
-    )
+      .pipe(
+        map(res => JSON.parse(res.text()))
+      );
   }
   /**
   * @getMovies get all movies suggestions
   * @return {Array} [movie]
   */
   public getSpecificMovie(id) {
-    return this.http.get(environment.apiUrl + `&i=${id}`);
+    return this.http.get(environment.apiUrl + `&i=${id}`)
+      .pipe(
+        map(res => JSON.parse(res.text()))
+      );
   }
 }

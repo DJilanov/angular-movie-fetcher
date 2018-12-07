@@ -5,10 +5,6 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: 'app/modules/home/home.module#HomeModule'
-  },
-  {
-    path: 'categories/:category',
-    loadChildren: './modules/movie-details/movie-details.module#MovieDetailsModule'
   }
 ];
 
