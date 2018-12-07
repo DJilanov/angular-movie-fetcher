@@ -30,15 +30,35 @@
 </div> -->
 
 <div class="container">
-  <div class="right-side col-xs-12 col-md-4">
-    <img [src]="movie.Poster" />
-  </div>
-  <div class="right-side col-xs-12 col-md-8">
-    <div class="header col-xs-12">
-      <span class="title">{{ movie.Title }}</span>
-      <span class="year">({{ movie.Year }})</span>
+  <div class="main-info">
+    <div class="right-side col-xs-12 col-md-4">
+      <img [src]="movie.Poster" />
     </div>
-    <div class="rated">Rated: {{ movie.Rated }}</div>
-    <div class="genre">Genre: {{ movie.Genre }}</div>
+    <div class="right-side col-xs-12 col-md-8">
+      <div class="header col-xs-12">
+        <span class="title">{{ movie.Title }}</span>
+        <span class="year">({{ movie.Year }})</span>
+      </div>
+      <div class="rated">Rated: {{ movie.Rated }}</div>
+      <div class="genre">Genre: {{ movie.Genre }}</div>
+      <div class="type">Type: {{ movie.Type }}</div>
+      <div class="runtime">Runtime: {{ movie.Runtime }}</div>
+      <div class="released">Released: {{ movie.Released }}</div>
+      <div class="Country">Country: {{ movie.Country }}</div>
+      <div class="director">Director: {{ movie.Director }}</div>
+      <div class="actors">Actors: {{ movie.Actors }}</div>
+      <div class="production">Production: {{ movie.Production }}</div>
+      <div class="awards">Awards: {{ movie.Awards }}</div>
+    </div>
+  </div>
+  <div class="plot col-xs-12">
+    <div class="website">Website: {{ movie.Website }}</div>
+    <div class="boxOffice">BoxOffice: {{ movie.BoxOffice }}</div>
+    <div class="plot">{{movie.Plot}}</div>
+  </div>
+  <div *ngFor="let rating of movie.Ratings"
+    class="ratings">
+    <span class="Source">{{ rating.Source }}: </span>
+    <span class="Value">{{ rating.Value }}</span>
   </div>
 </div>
