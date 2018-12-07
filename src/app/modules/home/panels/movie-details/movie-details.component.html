@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="Title">Title: {{ movie.Title }}</div>
   <div class="Year">Year: {{ movie.Year }}</div>
   <div class="Rated">Rated: {{ movie.Rated }}</div>
@@ -24,7 +24,21 @@
   <div class="Response">Response: {{ movie.Response }}</div>
   <div *ngFor="let rating of movie.Ratings"
     class="ratings">
-    <div class="Source">Source: {{ movie.Source }}</div>
-    <div class="Value">Value: {{ movie.Value }}</div>
+    <div class="Source">Source: {{ rating.Source }}</div>
+    <div class="Value">Value: {{ rating.Value }}</div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="right-side col-xs-12 col-md-4">
+    <img [src]="movie.Poster" />
+  </div>
+  <div class="right-side col-xs-12 col-md-8">
+    <div class="header col-xs-12">
+      <span class="title">{{ movie.Title }}</span>
+      <span class="year">({{ movie.Year }})</span>
+    </div>
+    <div class="rated">Rated: {{ movie.Rated }}</div>
+    <div class="genre">Genre: {{ movie.Genre }}</div>
   </div>
 </div>

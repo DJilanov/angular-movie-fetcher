@@ -9,7 +9,8 @@
       [value]="i">{{movie.Title}} ({{movie.Year}})</ng-option>
     <ng-option *ngIf="!movies.length" value="-1" disabled>{{notFoundText}}</ng-option>
   </ng-select>
-  <div *ngIf="selectedMovie !== undefined">
+  <div *ngIf="selectedMovie !== undefined"
+    class="selected-movie">
     <app-movie-details [movie]="movies[selectedMovie]"></app-movie-details>
   </div>
 </div>

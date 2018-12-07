@@ -3,7 +3,29 @@ $webpage-base-white-color: #FFFFFF;
 $webpage-base-gray-color: rgb(206, 206, 206);
 $webpage-base-black-color: #000000;
 $webpage-base-red-color: #FF0000;
-
 $webpage-dark-font-color: #010101;
-
 $webpage-link-color: rgb(38, 0, 255);
+
+// base font-sizes
+$font-size: 16px !default;
+$base-font-size: 1rem !default;
+
+// font-families
+$font-family-primary: 'Montserrat', sans-serif !default;
+$font-family-secondary: 'Work Sans', sans-serif !default;
+$font-family-tertiary: 'Arial', sans-serif !default;
+
+// font-weights
+$font-weight-lighter: 100  !default;
+$font-weight-light: 200  !default;
+$font-weight: 400  !default;
+$font-weight-bold: 600  !default;
+$font-weight-bolder: 700  !default;
+
+// font-sizes
+$text-size-tiny:     $font-size * .25 !default; // 4, based on $font-size
+$text-size-small:    $font-size * .5  !default; // 8, based on $font-size
+$text-size-regular:  $font-size       !default; // 16, based on $font-size
+$text-size-medium:   $font-size * 1.5 !default; // 24, based on $font-size
+$text-size-large:    $font-size * 3   !default; // 48, based on $font-size
+$text-size-xlarge:   $font-size * 4   !default; // 64, based on $font-size

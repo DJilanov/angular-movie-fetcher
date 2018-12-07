@@ -1,19 +1,15 @@
 @import "../../../../../variables";
 
-:host {
-	flex: 1 0 auto;
+.title {
+  font-size: $text-size-medium;
 }
 
-.row {
-	margin-left: 0;
-	padding-bottom: 0.2rem;
-}
+.left-side,
+.right-side {
+  display: inline-block;
 
-.details {
-	margin-top: 40px;
-	overflow-x: hidden;
-}
-
-.rating {
-	color: rgb(242, 118, 28);
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
