@@ -4,13 +4,13 @@
     (change)="onSelect()"
     [notFoundText]="notFoundText"
     [typeahead]="typeahead"
-    [(ngModel)]="selectedMovie">
+    [(ngModel)]="movieIndex">
     <ng-option *ngFor="let movie of movies; let i = index"
       [value]="i">{{movie.Title}} ({{movie.Year}})</ng-option>
     <ng-option *ngIf="!movies.length" value="-1" disabled>{{notFoundText}}</ng-option>
   </ng-select>
   <div *ngIf="selectedMovie !== undefined"
     class="selected-movie">
-    <app-movie-details [movie]="movies[selectedMovie]"></app-movie-details>
+    <app-movie-details [movie]="selectedMovie"></app-movie-details>
   </div>
 </div>

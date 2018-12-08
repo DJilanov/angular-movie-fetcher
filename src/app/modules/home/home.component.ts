@@ -19,9 +19,10 @@ enum SearchStatus {
 export class HomeComponent {
 
   public typeahead = new EventEmitter<string>();
-  public selectedMovie: number;
+  public movieIndex: number;
   public notFoundText: string = SearchStatus.empty;
   public movies: MovieModel[] = [];
+  public selectedMovie: MovieModel;
 
   constructor(
     private backendService: BackendService
@@ -49,10 +50,10 @@ export class HomeComponent {
   }
 
   public onSelect() {
-    this.backendService.getSpecificMovie(this.movies[this.selectedMovie].imdbID)
+    this.backendService.getSpecificMovie(this.movies[this.movieIndex].imdbID)
       .subscribe((response: any) => {
         if (!response.Error) {
-          this.movies[this.selectedMovie] = response;
+          this.selectedMovie = response;
         }
       }, (err) => {
           console.log('error', err);
