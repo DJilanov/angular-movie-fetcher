@@ -3,19 +3,19 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
-import { BackendService } from './backend.service';
+import { MoviesService } from './movies.service';
 
-describe('BackendService', () => {
+describe('MoviesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       providers: [
-        BackendService
+        MoviesService
       ]
     });
   });
 
-  it('should ...', inject([BackendService], (service: BackendService) => {
+  it('should ...', inject([MoviesService], (service: MoviesService) => {
     expect(service).toBeTruthy();
   }));
 });
