@@ -18,16 +18,16 @@
       <div class="actors">Actors: {{ movie.Actors }}</div>
       <div class="production">Production: {{ movie.Production }}</div>
       <div class="awards">Awards: {{ movie.Awards }}</div>
+      <div class="website">Website: {{ movie.Website }}</div>
+      <div class="boxOffice">BoxOffice: {{ movie.BoxOffice }}</div>
+      <div *ngFor="let rating of movie.Ratings"
+        class="ratings">
+        <span class="Source">{{ rating.Source }}: </span>
+        <span class="Value">{{ rating.Value }}</span>
+      </div>
     </div>
   </div>
   <div class="plot col-xs-12">
-    <div class="website">Website: {{ movie.Website }}</div>
-    <div class="boxOffice">BoxOffice: {{ movie.BoxOffice }}</div>
     <div class="plot">{{movie.Plot}}</div>
-  </div>
-  <div *ngFor="let rating of movie.Ratings"
-    class="ratings">
-    <span class="Source">{{ rating.Source }}: </span>
-    <span class="Value">{{ rating.Value }}</span>
   </div>
 </div>
