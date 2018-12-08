@@ -1,12 +1,8 @@
 /* tslint:disable:no-unused-variable */
 import { FormsModule } from '@angular/forms';
 import { TestBed, async } from '@angular/core/testing';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import {
-  Http, HttpModule, XHRBackend, ResponseOptions,
-  Response, BaseRequestOptions
-} from '@angular/http';
-import { RouterTestingModule } from '@angular/router/testing';
+import { MockBackend } from '@angular/http/testing';
+import { Http, BaseRequestOptions } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
