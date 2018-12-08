@@ -15,7 +15,7 @@
 		"baseUrl": "",
 		"types": [
 			"node"
-		]
+    ]
 	},
 	"exclude": [
 		"test.ts",
