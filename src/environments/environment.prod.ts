@@ -4,8 +4,8 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 
 export const environment = {
-	production: true,
-	envName: 'prod',
-	appUrl: 'http://localhost:4200/',
-	apiUrl: 'http://www.omdbapi.com/?i=tt3896198&apikey=c11d35e6'
+  production: true,
+  envName: 'prod',
+  appUrl: 'http://localhost:4200/',
+  apiUrl: 'http://www.omdbapi.com/?i=tt3896198&apikey=c11d35e6'
 };

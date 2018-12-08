@@ -12,7 +12,7 @@ export class MoviesService {
   private movies = [];
   public moviesSubscriber: EventEmitter<any>;
 
-	constructor() {
+  constructor() {
     this.moviesSubscriber = new EventEmitter();
   }
 
@@ -29,7 +29,7 @@ export class MoviesService {
   * @return {Array} all Movies
   */
   public setMovies(movies: MovieModel[]) {
-    if(Array.isArray(movies)) {
+    if (Array.isArray(movies)) {
       this.movies = movies;
     } else {
       this.movies = [movies];
@@ -41,6 +41,6 @@ export class MoviesService {
   * @emitMovies emit the movies to the components
   */
   public emitMovies() {
-		this.moviesSubscriber.emit(this.movies);
+    this.moviesSubscriber.emit(this.movies);
   }
 }

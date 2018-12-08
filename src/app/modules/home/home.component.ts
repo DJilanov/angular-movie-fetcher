@@ -35,7 +35,7 @@ export class HomeComponent {
           })
       )
       .subscribe((response) => {
-        if(response.Error) {
+        if (response.Error) {
           this.movies.length = 0;
           this.notFoundText = response.Error
         } else {
@@ -51,7 +51,7 @@ export class HomeComponent {
   public onSelect() {
     this.backendService.getSpecificMovie(this.movies[this.selectedMovie].imdbID)
       .subscribe((response: any) => {
-        if(!response.Error) {
+        if (!response.Error) {
           this.movies[this.selectedMovie] = response;
         }
       }, (err) => {
